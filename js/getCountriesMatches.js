@@ -39,17 +39,21 @@ document.getElementById("getCountriesMatches").addEventListener("click", functio
     if(clickedCM === false){
         clickedCM = true;
         Ajax.get("http://worldcup.sfg.io/matches/country?fifa_code=ARG", (data) => {
-            console.log(data);
+            //console.log(data);
+            JSON.stringify(data[i], function (key, value) {
             for(var i = 0; i < data.length; i++){
-                
+                data = value;
+                if (key == "venue") {
                 var tr = document.getElementById("allCountriesMatches");
                 var th = document.createElement("th");
-                th.appendChild(document.createTextNode(data[i]));
+                th.appendChild(document.createTextNode(value));
                 tr.appendChild(th);
+                }
             }
+            })
         });
     
-
+    
         // var ajax = new XMLHttpRequest();
     
         // // open - GET / POST / PUT / DELETE / PATCH (most popular) 

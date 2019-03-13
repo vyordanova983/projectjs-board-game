@@ -47,7 +47,7 @@ document.getElementById("getMatches").addEventListener("click", function(){
             for(var i = 0; i < data.length; i++){
                 console.log(data[i]);
                 JSON.stringify(data[i], function (key, value) {
-                    if (key == "matches") {
+                    if (key == "venue") {
                         //alert(value)
                         //document.getElementById("allCountries").innerHTML = value;
                         var tr = document.getElementById("allMatches");
