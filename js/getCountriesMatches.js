@@ -41,10 +41,15 @@ document.getElementById("getCountriesMatches").addEventListener("click", functio
         Ajax.get("http://worldcup.sfg.io/matches/country?fifa_code=ARG", (data) => {
             console.log(data);
             for(var i = 0; i < data.length; i++){
-                console.log(data[i]);
+                
+                var tr = document.getElementById("allCountriesMatches");
+                var th = document.createElement("th");
+                th.appendChild(document.createTextNode(data[i]));
+                tr.appendChild(th);
             }
         });
     
+
         // var ajax = new XMLHttpRequest();
     
         // // open - GET / POST / PUT / DELETE / PATCH (most popular) 

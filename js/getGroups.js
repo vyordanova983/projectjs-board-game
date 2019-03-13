@@ -47,6 +47,12 @@ document.getElementById("getGroups").addEventListener("click", function(){
                 JSON.stringify(data[i], function (key, value) {
                     if (key == "letter") {
                         array.push(value)
+                        //alert(value)
+                        //document.getElementById("allCountries").innerHTML = value;
+                        var tr = document.getElementById("allGroups");
+                        var th = document.createElement("th");
+                        th.appendChild(document.createTextNode(value));
+                        tr.appendChild(th);
                     } else {
                       return value;
                     }
@@ -55,6 +61,7 @@ document.getElementById("getGroups").addEventListener("click", function(){
             
             document.getElementById("allGroups").innerHTML = array;
         });
+       
 
         // var ajax = new XMLHttpRequest();
 

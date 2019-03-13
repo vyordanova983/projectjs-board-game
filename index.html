@@ -7,15 +7,29 @@
     <title>Document</title>
 </head>
 <body>
+        <input type="text" id="searchField" onkeypress="myFunction()">
+
     <button id="getCountries">Countries</button>
     <button id="getGroups">Group</button>
     <button id="getMatches">Matches</button>
     <button id="getCountriesMatches">Countries Matches</button>
     <br/>
-    <div id="allCountries"></div>
-    <div id="allGroups"></div>
-    <div id="allMatches"></div>
-    <div id="allCountriesMatches"></div>
+ 
+
+    <table style="width:1000%;  border:1px solid black;" >
+        <tr>
+          <th id="allCountries"></th>
+        </tr>
+        <tr>
+          <th id="allMatches"></th>
+        </tr>
+        <tr>
+            <th id="allGroups"></th>
+          </tr>
+          <tr>
+            <th id="allCountriesMatches"></th>
+          </tr>
+       </table>
 
     <script src="js/getCountries.js"></script>
     <script src="js/getGroups.js"></script> 

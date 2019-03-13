@@ -46,14 +46,18 @@ document.getElementById("getCountries").addEventListener("click", function(){
                 console.log(data[i]);
                 JSON.stringify(data[i], function (key, value) {
                     if (key == "country") {
-                        document.getElementById("allCountries").innerHTML = value;
+                        //alert(value)
+                        //document.getElementById("allCountries").innerHTML = value;
+                        var tr = document.getElementById("allCountries");
+                        var th = document.createElement("th");
+                        th.appendChild(document.createTextNode(value));
+                        tr.appendChild(th);
                     } else {
                       return value;
                     }
                 });
             }
         });
-
         
         //var ajax = new XMLHttpRequest();
 

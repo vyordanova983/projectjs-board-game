@@ -35,6 +35,10 @@ var Ajax = {
     }
 };
 
+function myFunction() {
+      var letter = document.getElementById('searchField').value;
+      
+  }
 document.getElementById("getMatches").addEventListener("click", function(){
     if(clickedMatches === false){
         clickedMatches = true;
@@ -42,9 +46,21 @@ document.getElementById("getMatches").addEventListener("click", function(){
             console.log(data);
             for(var i = 0; i < data.length; i++){
                 console.log(data[i]);
+                JSON.stringify(data[i], function (key, value) {
+                    if (key == "matches") {
+                        //alert(value)
+                        //document.getElementById("allCountries").innerHTML = value;
+                        var tr = document.getElementById("allMatches");
+                        var th = document.createElement("th");
+                        th.appendChild(document.createTextNode(value));
+                        tr.appendChild(th);
+                    } else {
+                      return value;
+                    }
+                });
             }
         });
-    
+        
         // var ajax = new XMLHttpRequest();
     
         // // open - GET / POST / PUT / DELETE / PATCH (most popular) 
